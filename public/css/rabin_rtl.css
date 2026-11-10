@@ -1,0 +1,77 @@
+/* ==========================================================================
+   Rabin RTL adjustments
+   Frappe sets html[dir="rtl"] when the logged-in user's language is RTL.
+   Do not force direction globally: preserve Frappe's native direction logic.
+   ========================================================================== */
+
+html[dir="rtl"] {
+  text-align: start;
+}
+
+html[dir="rtl"] body,
+html[dir="rtl"] .desk-container,
+html[dir="rtl"] .page-container {
+  text-align: start;
+}
+
+/* Use logical alignment for form labels and common content areas. */
+html[dir="rtl"] .form-section,
+html[dir="rtl"] .form-dashboard-section,
+html[dir="rtl"] .page-head,
+html[dir="rtl"] .list-row,
+html[dir="rtl"] .list-row-head {
+  text-align: start;
+}
+
+/* Persian text should follow natural paragraph direction. */
+html[dir="rtl"] :is(
+  .form-control,
+  .control-input input,
+  .control-input textarea,
+  .comment-input,
+  .ql-editor
+) {
+  text-align: start;
+}
+
+/* Technical values remain LTR for predictable editing and copy/paste. */
+html[dir="rtl"] :is(
+  input[type="email"],
+  input[type="url"],
+  input[type="tel"],
+  input[type="number"],
+  input[type="password"],
+  input[data-fieldtype="Currency"],
+  input[data-fieldtype="Float"],
+  input[data-fieldtype="Int"]
+) {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Keep code, identifiers, URLs and machine values readable in RTL forms. */
+html[dir="rtl"] :is(
+  code,
+  pre,
+  .font-mono,
+  .text-monospace,
+  .link-field input,
+  .awesomplete input
+) {
+  unicode-bidi: plaintext;
+}
+
+.body-sidebar 
+.standard-sidebar-item 
+.sidebar-item-label
+{
+line-height:2
+}
+ 
+.text-base{
+line-height:1.5
+}
+
+
+/* Physical left/right properties are intentionally avoided here.
+   Frappe's own RTL bundle handles its core navigation and controls. */

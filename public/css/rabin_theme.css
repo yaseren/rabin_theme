@@ -1,0 +1,271 @@
+/* ==========================================================================
+   Rabin ERPNext Theme — Modern Minimal
+   Target: Frappe Framework 16 / ERPNext 16
+   Scope: Desk only (loaded with app_include_css)
+   ========================================================================== */
+
+/* Local font files: add the licensed font binaries under public/fonts/. */
+@font-face {
+  font-family: "Rabin Yekan";
+  src: url("/assets/rabin_theme/fonts/IRANSansWeb_Light.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rabin Yekan";
+  src: url("/assets/rabin_theme/fonts/IRANSansWeb_Light.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rabin Yekan";
+  src: url("/assets/rabin_theme/fonts/IRANSansWeb_Light.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+:root {
+  /* Frappe typography token + Rabin design tokens */
+  --font-stack: "Rabin Yekan", Tahoma, sans-serif;
+  --rabin-brand: #315ee7;
+  --rabin-brand-hover: #244bc2;
+  --rabin-brand-soft: #edf2ff;
+  --rabin-radius-xs: 6px;
+  --rabin-radius-sm: 9px;
+  --rabin-radius-md: 12px;
+  --rabin-radius-lg: 16px;
+  --rabin-shadow-card: 0 2px 10px rgba(20, 35, 70, 0.045);
+  --rabin-shadow-popover: 0 12px 32px rgba(20, 35, 70, 0.12);
+  --rabin-focus-ring: 0 0 0 3px rgba(49, 94, 231, 0.14);
+}
+
+/* --------------------------------------------------------------------------
+   Typography
+   -------------------------------------------------------------------------- */
+html,
+body,
+button,
+input,
+select,
+textarea,
+.form-control,
+.control-input,
+.navbar,
+.desk-sidebar,
+.page-container,
+.modal,
+.dropdown-menu,
+.popover,
+.tooltip {
+  font-family: var(--font-stack) !important;
+}
+
+body {
+  font-size: 13px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Keep icon fonts and icon glyphs owned by Frappe intact. */
+.octicon,
+.octicon::before,
+[class^="icon-"]::before,
+[class*=" icon-"]::before,
+.fa,
+.fas,
+.far,
+.fab,
+.emoji {
+  font-family: inherit;
+}
+
+/* --------------------------------------------------------------------------
+   General surfaces and navigation
+   -------------------------------------------------------------------------- */
+.navbar {
+  min-height: 56px;
+  border-bottom: 1px solid var(--outline-gray-1, #e6eaf0);
+  box-shadow: 0 1px 3px rgba(20, 35, 70, 0.035);
+}
+
+.desk-sidebar {
+  border-inline-end: 1px solid var(--outline-gray-1, #e6eaf0);
+}
+
+.standard-sidebar-item > a,
+.standard-sidebar-item .item-anchor,
+.sidebar-item a {
+  border-radius: var(--rabin-radius-sm);
+  transition: background-color 140ms ease, color 140ms ease;
+}
+
+.standard-sidebar-item:hover > a,
+.standard-sidebar-item:hover .item-anchor,
+.sidebar-item a:hover {
+  background: var(--surface-gray-2, #f1f4f8);
+}
+
+.standard-sidebar-item.selected > a,
+.standard-sidebar-item.selected .item-anchor {
+  background: var(--rabin-brand-soft);
+  color: var(--rabin-brand-hover);
+  font-weight: 600;
+}
+
+.page-head {
+  border-bottom: 1px solid var(--outline-gray-1, #e6eaf0);
+}
+
+.page-title .title-text,
+.page-head .title-text {
+  font-weight: 700;
+}
+
+/* --------------------------------------------------------------------------
+   Cards, workspace widgets and form sections
+   -------------------------------------------------------------------------- */
+.frappe-card,
+.widget,
+.number-card,
+.dashboard-widget-box,
+.modal-content,
+.popover {
+  border-color: var(--outline-gray-1, #e6eaf0);
+  border-radius: var(--rabin-radius-md);
+  box-shadow: var(--rabin-shadow-card);
+}
+
+.form-section {
+  border: 1px solid var(--outline-gray-1, #e6eaf0);
+  border-radius: var(--rabin-radius-md);
+  background: var(--surface-base, #fff);
+  padding: 14px 16px;
+  margin-block: 12px;
+}
+
+.form-section .section-head,
+.form-dashboard-section .section-head {
+  font-weight: 700;
+}
+
+.form-section .section-head {
+  border-bottom-color: var(--outline-gray-1, #e6eaf0);
+}
+
+/* --------------------------------------------------------------------------
+   Inputs, controls and buttons
+   -------------------------------------------------------------------------- */
+.form-control,
+.control-input input,
+.control-input select,
+.control-input textarea,
+input.form-control,
+select.form-control,
+textarea.form-control {
+  min-height: 36px;
+  border-color: var(--outline-gray-2, #dce2eb);
+  border-radius: var(--rabin-radius-sm);
+  transition: border-color 140ms ease, box-shadow 140ms ease;
+}
+
+.form-control:focus,
+.control-input input:focus,
+.control-input select:focus,
+.control-input textarea:focus {
+  border-color: var(--rabin-brand);
+  box-shadow: var(--rabin-focus-ring);
+  outline: 0;
+}
+
+.btn {
+  border-radius: var(--rabin-radius-sm);
+  font-weight: 500;
+  transition: background-color 140ms ease, border-color 140ms ease,
+    box-shadow 140ms ease, transform 140ms ease;
+}
+
+.btn-primary {
+  background-color: var(--rabin-brand);
+  border-color: var(--rabin-brand);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--rabin-brand-hover);
+  border-color: var(--rabin-brand-hover);
+}
+
+.btn:focus-visible {
+  box-shadow: var(--rabin-focus-ring);
+}
+
+/* --------------------------------------------------------------------------
+   Lists and tables
+   -------------------------------------------------------------------------- */
+.list-row,
+.list-row-head,
+.report-wrapper .dt-row {
+  border-color: var(--outline-gray-1, #e6eaf0);
+}
+
+.list-row:hover {
+  background: var(--surface-gray-1, #f7f8fa);
+}
+
+.datatable .dt-cell,
+.datatable .dt-row-header .dt-cell {
+  border-color: var(--outline-gray-1, #e6eaf0);
+}
+
+.indicator-pill,
+.badge {
+  border-radius: 999px;
+}
+
+/* --------------------------------------------------------------------------
+   Menus, dialogs, notifications
+   -------------------------------------------------------------------------- */
+.dropdown-menu {
+  border: 1px solid var(--outline-gray-1, #e6eaf0);
+  border-radius: var(--rabin-radius-md);
+  box-shadow: var(--rabin-shadow-popover);
+  padding: 6px;
+}
+
+.dropdown-menu > li > a,
+.dropdown-menu .dropdown-item {
+  border-radius: var(--rabin-radius-xs);
+}
+
+.modal-content {
+  overflow: hidden;
+}
+
+.modal-header,
+.modal-footer {
+  border-color: var(--outline-gray-1, #e6eaf0);
+}
+
+/* --------------------------------------------------------------------------
+   Accessibility and reduced motion
+   -------------------------------------------------------------------------- */
+:focus-visible {
+  outline-color: var(--rabin-brand);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
