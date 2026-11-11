@@ -65,7 +65,7 @@ html[dir="rtl"] :is(
 .standard-sidebar-item 
 .sidebar-item-label
 {
-line-height:2
+line-height:1.5
 }
  
 .text-base{

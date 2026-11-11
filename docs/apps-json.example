@@ -1,0 +1,14 @@
+[
+  {
+    "url": "https://github.com/frappe/erpnext",
+    "branch": "version-16"
+  },
+  {
+    "url": "https://github.com/sfarbod/persian_calendar_ERPNext",
+    "branch": "main"
+  },
+  {
+    "url": "https://YOUR-GIT-REMOTE/group/rabin_theme.git",
+    "branch": "main"
+  }
+]
